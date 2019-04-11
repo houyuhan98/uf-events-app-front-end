@@ -1,0 +1,86 @@
+body {
+        padding: 0;
+        margin: 0;
+        background: url(aerial_photo.jpg) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-position: center;
+        font-family: sans-serif;
+}
+
+.loginForm {
+    width: 340px;
+    padding: 40px;
+    position: absolute;
+    background-color:  white;
+    opacity: 0.85;
+    top: 50%;
+    left: 50%;
+    outline: 1.5px solid grey;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.loginForm input[type = "text"],.loginForm input[type = "password"] {
+    border: 0;
+    display: block;
+    margin: 25px auto;
+    background: none;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 15px 10px;
+    width: 200px;
+    color: black;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.2s;
+}
+
+.loginForm h1{ 
+    font-weight: 500;
+}
+
+.loginForm input[type = "text"]:focus,.loginForm input[type = "password"]:focus {
+    width: 250px;
+    border-color:#2ecc71;
+}
+
+.loginForm input[type ="submit"] {
+    border: 0;
+    display: block;
+    margin: 18px auto;
+    background: none;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 15px 45px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.loginForm input[type = "submit"]:hover {
+    background: #3498db;
+    color: white;
+}
+
+.g-signin2 {
+    width: auto;
+    height: auto;
+    text-align: center;
+    cursor: pointer;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.fb-login-button {
+    width: auto;
+    height: auto;
+    text-align: center;
+    cursor: pointer;
+    margin: 0 auto;
+    display: inline-block;
+}

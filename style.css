@@ -1,0 +1,336 @@
+/*
+TODO: figure out styling
+*/
+.col-md-3{
+   border-color:orange;
+   border-style:solid;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#searchBar {
+    margin: 0px 10px;
+  }
+
+#register{
+margin-left:1250px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:orange;
+    border:none;
+    font-size:20px;
+}
+
+.button1 {
+    margin-left:1300px;
+    color:orange;
+    font: bold 20px Arial;
+  text-decoration: none;
+  background-color:white;
+  padding: 2px 6px 2px 6px;
+ border:none;
+}
+
+.button2{
+    color:orange;
+    border:none;
+    font-size:20px;
+    margin-bottom:20px;
+    margin-left:50px;
+}
+
+.form-row{
+    margin: 50px;
+}
+
+.header h1{
+    font-size:28px;
+    margin-top:100px;
+    color:orange;
+}
+
+.header h2{
+    font-size:28px;
+    color:orange;
+}
+
+.header h3{
+    font-size:28px;
+    color:orange;
+}
+
+.column{
+    display:inline-block;
+    margin-left:50px;
+    font-size:10px;
+}
+
+.eventHeader h1{
+    font-size:80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:gray;
+}
+
+.ID h1{
+    font-size:20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:gray;
+}
+
+.info{
+    font-size:20px;
+    margin-left:50px;
+}
+
+#pic{
+    margin-left:200px;
+}
+
+#popup {
+    position: fixed;
+    font-family: arial,helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 99999;
+    opacity:0;
+    transition: opacity 400ms linear;
+    pointer-events: none;
+}
+#popup:target {
+    opacity:1;
+    pointer-events: auto;
+}
+#popup > div {
+    width: 400px;
+    height: 240px;
+    position: relative;
+    margin: 10% auto;
+    padding: 20px 20px 13px 20px;
+    border: solid;
+    border-color: black;
+    border-width : 2px;
+    background: oldlace;
+    border-radius: 10px;
+}	
+
+
+
+#popup1 {
+    position: fixed;
+    font-family: arial,helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 99999;
+    opacity:0;
+    transition: opacity 400ms linear;
+    pointer-events: none;
+}
+#popup1:target {
+    opacity:1;
+    pointer-events: auto;
+}
+#popup1 > div {
+    width: 400px;
+    height: 240px;
+    position: relative;
+    margin: 10% auto;
+    padding: 20px 20px 13px 20px;
+    border: solid;
+    border-color: black;
+    border-width : 2px;
+    background: oldlace;
+    border-radius: 10px;
+}	
+
+#popup2 {
+  position: fixed;
+  font-family: arial,helvetica, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 99999;
+  opacity:0;
+  transition: opacity 400ms linear;
+  pointer-events: none;
+}
+#popup2:target {
+  opacity:1;
+  pointer-events: auto;
+}
+#popup2 > div {
+  width: 500px;
+  height: 650px;
+  position: relative;
+  margin: 5% auto;
+  padding: 10px 10px 5px 10px;
+  border: solid;
+  border-color: black;
+  border-width : 2px;
+  background: oldlace;
+  border-radius: 10px;
+}	
+
+#popup3 {
+  position: fixed;
+  font-family: arial,helvetica, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 99999;
+  opacity:0;
+  transition: opacity 400ms linear;
+  pointer-events: none;
+}
+#popup3:target {
+  opacity:1;
+  pointer-events: auto;
+}
+#popup3 > div {
+  width: 1519px;
+  height: 1800px;
+  position: relative;
+  padding: 20px 20px 13px 20px;
+  border-style: none;
+  border-width : 1px;
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+}	
+
+.close {
+    color:black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+
+  .interest {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color:orange;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .interest input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+  }
+  
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color:red;
+  }
+  
+
+  .fa {
+    padding: 20px;
+    font-size:30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+  }
+  
+  .fa:hover {
+      opacity: 0.7;
+  }
+  
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }  
+  .fa-google {
+    background: #dd4b39;
+    color: white;
+  }
+  .fa-youtube {
+    background: #bb0000;
+    color: white;
+  }
+  .fa-pinterest {
+    background: #cb2027;
+    color: white;
+  }
+  
+  .fa-snapchat-ghost {
+    background: #fffc00;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+  .fa-yahoo {
+    background: #430297;
+    color: white;
+  }
+  .fa-reddit {
+    background: #ff5700;
+    color: white;
+  }
+  .fa-skype {
+    background: #00aff0;
+    color: white;
+  }
+  
+  .fa-android {
+    background: #a4c639;
+    color: white;
+  }
+
+
+  
+  

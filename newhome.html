@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Events Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="http://yui.yahooapis.com/3.18.1/build/yui/yui-min.js"></script>
+</head>
+
+<body ng-app="eventsApp">
+    <div class="logo">
+        <img src="logo.jpg" alt="logo image">
+    </div>
+    
+    <div class="container">
+        <div class="row" ng-controller="ListingsController">
+          <div class="col-md-8">
+            <div class="input-group" id="searchBar">
+                <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search"></span></span>
+                <input type="text" class="form-control" placeholder="Search events" ng-model="choice">
+            </div>
+            <br/>
+          
+            <div class="column" ng-repeat="x in eventLists | filter: date | filter: choice | filter: category.first | filter: category.second | filter: category.third | filter: category.four | filter: category.five | filter: category.six | filter: time.first | filter: time.second | filter: time.third | filter: time.four | filter: time.five | filter: time.six | filter: location.first | filter: location.second | filter: location.third | filter: location.four | filter: location.five | filter: location.six | filter: location.seven">
+                <br/>
+                <img ng-src="{{x.img}}" height=100px width=100px ng-click="showDetails($index)">
+                <p>{{x.name}}</p>
+                <p><b>location:</b>{{x.location}}</p>
+                <p><b>date:</b>{{x.date}}</p>
+                <p><b>time:</b>{{x.time}}</p>
+                <p><b>category:</b>{{x.category}}</p> 
+                <p><b>brief description:</b>{{x.brief}}</p>
+                <label class="interest">Interested
+                    <input type="checkbox" id="c">
+                    <span class="checkmark"></span>
+                </label>
+              </div>
+          </div>
+
+         
+
+          <div class="col-md-1">
+            <a class="button" onclick="validate();">+Post</a>
+            <script>
+              function validate() {
+                 alert("You have to sign in before you can post events!");
+              }
+           </script>
+          </div>
+
+          <div class="col-md-3">
+            <div class="button">
+              <button onclick="location.href='signin.html'" type="button";>Sign in</button><br/><br/><br/>
+            </div>
+            <iframe src="https://calendar.google.com/calendar/embed?title=eventsGo&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=300&amp;wkst=1&amp;hl=en&amp;bgcolor=%23ffcc33&amp;src=948786715%40qq.com&amp;color=%23AB8B00&amp;ctz=America%2FNew_York" style="border-width:0" width="250" height="250" frameborder="0" scrolling="no"></iframe>
+           
+               <div>
+                  Enter date to find events: 
+                  
+   <input type=text ng-model="date" placeholder="yyyy-mm-dd">
+       
+               </div>
+             
+           <div class="header">
+             <h1>Location</h1>
+           </div>
+           <form action="/action_page.php">
+            <input type="checkbox" ng-model="location.first" ng-true-value="'Reitz Union'" ng-false-value="''"> Reitz Union<br>
+            <input type="checkbox" ng-model="location.second" ng-true-value="'Hub'" ng-false-value="''"> Hub<br>
+            <input type="checkbox" ng-model="location.third" ng-true-value="'Marston Library'" ng-false-value="''"> Marston Library<br>
+            <input type="checkbox" ng-model="location.four" ng-true-value="'Library West'" ng-false-value="''"> Library West<br>
+            <input type="checkbox" ng-model="location.five" ng-true-value="'CSE Building'" ng-false-value="''"> CSE Building<br>
+            <input type="checkbox" ng-model="location.six" ng-true-value="'Art Museum'" ng-false-value="''"> Art Museum<br>
+            <input type="checkbox" ng-model="location.seven" ng-true-value="'Phillips Center'" ng-false-value="''"> Phillips Center<br><br>
+          </form>
+          <div class="header">
+            <h2>Time</h2>
+          </div>
+          <form action="/action_page.php">
+            <input type="checkbox" ng-model="time.first" ng-true-value="'8am-10am'" ng-false-value="''"> 8am-10am<br>
+            <input type="checkbox" ng-model="time.second" ng-true-value="'10am-12pm'" ng-false-value="''"> 10am-12pm<br>
+            <input type="checkbox" ng-model="time.third" ng-true-value="'12pm-3pm'" ng-false-value="''"> 12pm-3pm<br>
+            <input type="checkbox" ng-model="time.four" ng-true-value="'3pm-5pm'" ng-false-value="''"> 3pm-5pm<br>
+            <input type="checkbox" ng-model="time.five" ng-true-value="'5pm-7pm'" ng-false-value="''"> 5pm-7pm<br>
+            <input type="checkbox" ng-model="time.six" ng-true-value="'7pm-10pm'" ng-false-value="''"> 7pm-10pm<br><br>
+          </form>
+          <div class="header">
+            <h3>Category</h3>
+          </div>
+          <form action="/action_page.php">
+            <input type="checkbox" ng-model="category.first" ng-true-value="'Music'" ng-false-value="''"> Music<br>
+            <input type="checkbox" ng-model="category.second" ng-true-value="'Arts'" ng-false-value="''"> Arts<br>
+            <input type="checkbox" ng-model="category.third" ng-true-value="'Computer'" ng-false-value="''"> Computer<br>
+            <input type="checkbox" ng-model="category.four" ng-true-value="'Holiday'" ng-false-value="''"> Holiday<br>
+            <input type="checkbox" ng-model="category.five" ng-true-value="'International'" ng-false-value="''"> International<br>
+            <input type="checkbox" ng-model="category.six" ng-true-value="'Sports'" ng-false-value="''"> Sports<br><br>
+          </form>
+          </div>
+        </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="listingController.js"></script>
+    <script type="text/javascript" src="listingFactory.js"></script>
+    <script type="text/javascript" src = "https://code.angularjs.org/1.4.3/angular-route.js"></script>    
+</body>
+
+</html>

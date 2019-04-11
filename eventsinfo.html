@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Events info</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body ng-app="eventsApp">
+    <div ng-controller="ListingsController">
+        <div class="eventHeader">
+            <h1>{{detailedInfo.name}}</h1>
+        </div>
+        <a href="#popup" class="button1">Share!</a>
+        <div id="popup">
+            <div>
+                <span class="close">&times;</span>
+                <p><b>Share this event:</b><br><br>   
+            <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+    
+               <a class="a2a_button_facebook"></a>
+               <a class="a2a_button_twitter"></a>
+               <a class="a2a_button_google_plus"></a>
+               <a class="a2a_button_email"></a>
+               <a class="a2a_button_linkedin"></a>
+               <a class="a2a_button_pinterest"></a>
+               <a class="a2a_button_reddit"></a>
+               <a class="a2a_button_wechat"></a>
+            </div>
+            <script async src="https://static.addtoany.com/menu/page.js"></script>
+            </div>
+            <script>
+            var span = document.getElementsByClassName("close")[0];
+            var modal = document.getElementById('popup');
+            span.onclick = function() {
+                modal.style.display = "none";
+              }
+            </script>  
+        </div>
+        <div id="pic">
+        <img ng-src="{{detailedInfo.picture}}" height=350px width=500px>
+        <img ng-src="{{detailedInfo.pic}}" height=350px width=500px>
+        </div>
+        <div class="info">
+            <b>Date:</b><p>{{detailedInfo.date}}</p>
+            <b>Time:</b><p>{{detailedInfo.time}}</p>
+            <b>Locatiion:</b><p>{{detailedInfo.location}}</p>
+            <b>Detailed information:</b><p>{{detailedInfo.detail}}</p>
+            <b>Promotion/Benefit:</b><p>{{detailedInfo.promotion}}</p><br/><br/><br/><br/><br/><br/>
+        </div>
+            <button type="button" onclick="location.href='home.html'" class="button2">Back</button>
+            <a href="#popup1" id="register" class="button1">Register</a>
+            <div id="popup1">
+                    <div>
+                        <p><b>Just one step away!</b><br/><br/>
+                        Full Name: <input title="Please Enter Your Full Name" name="name" type="text" size="20"/><br/>
+                        Email: <input title="Please Enter Your email" name="email" type="text" size="20"/><br/>
+                        Student? (yes/no): <input title="Please clarify your identity" name="id" type="text" size="20"/><br/>
+                        Age:<input title="Please Enter Your age" name="age" type="text" size="20"/><br/><br/>
+                        <button type="button" style="color:orange; border:none" onclick="location.href='confirmation.html'">Submit</button>
+                        </p>
+                    </div>
+                    <script>
+                        var m = document.getElementById('popup1');
+                        window.onclick = function(event) {
+                        if (event.target == m) {
+                        m.style.display = "none";}
+                        }
+                    </script>
+            </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="listingController.js"></script>
+    <script type="text/javascript" src="listingFactory.js"></script>
+    <script type="text/javascript" src = "https://code.angularjs.org/1.4.3/angular-route.js"></script>
+</body>
+</html>

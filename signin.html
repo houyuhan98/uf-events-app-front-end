@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset = "utf-8">
+            <title> Login to eventsGo </title>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+                <link rel="stylesheet" href="login.css">
+</head>
+<body>
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=607039873092327&autoLogAppEvents=1"></script>
+    <div ng-app="myLoginApp" ng-controller="myLoginCtrl" ng-submit="submit()"> 
+    <form class = "loginForm">
+        <h1>EventsGo Login</h1>
+            <input type = "text" name = "" placeholder="Gatorlink" ng-model = "Gatorlink" required = "required">
+            <input type = "password" name = "" placeholder="Password" ng-model = "Password" required = "required">
+            <input type = "submit" name = "" value="Login">
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            <br></br>
+            <div class="fb-login-button" data-size="medium" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false"></div>
+            </form>
+            
+<script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId      : '607039873092327',
+            cookie     : true,
+            xfbml      : true,
+            version    : 'v3.2'
+          });
+            
+          FB.AppEvents.logPageView();   
+            
+        };
+      
+        (function(d, s, id){
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) {return;}
+           js = d.createElement(s); js.id = id;
+           js.src = "https://connect.facebook.net/en_US/sdk.js";
+           fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));
+         
+function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+      if (response.state === 'connected' )
+        location.href = "home.html";
+    statusChangeCallback(response);
+  });
+}
+      </script>
+      
+        <script>
+            function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  location.href = "home.html";
+}
+     </script>
+    <meta name="google-signin-client_id" content="336068434012-qfu6a34no43h304j80ik2m633jr0ebig.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+    <script src = "https://code.angularjs.org/1.4.3/angular-route.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="listingController.js"></script>
+    <script type="text/javascript" src="listingFactory.js"></script>
+</body>
+</html>
